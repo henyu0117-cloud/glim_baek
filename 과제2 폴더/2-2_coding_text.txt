@@ -1,0 +1,19 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<vector<int>> board, int k) {
+    int answer = 0;
+    int num_row = board.size();
+    int num_column = board[0].size();
+    for (int i = 0; i < num_row; i++)
+    {
+        for (int j = 0 ; j < num_column ; j++)
+        {
+            if (i+j <= k)
+                answer += board[i][j];
+        }
+    }
+    return answer;
+}
